@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class Aula5 {
 	public static void main(String Args[]) { 
-		ex8();
+		ex10();
 		
 	}
 	public static void ex2() {  
@@ -86,14 +86,47 @@ public class Aula5 {
 	}
 	public static void ex8() { 
 		double valor = Double.parseDouble(JOptionPane.showInputDialog(null,"Digite o valor em real: "));
-		JOptionPane.showMessageDialog(null,"Os respectivos valores são: "
-				+ String.format("\n º Dólar %.2d",(valor*0.22))
-				+ String.format("\n º Euro %.2d",(valor*0.20))
-				+ String.format("\n º Peso argentino %.2d",(valor*24.66))
-				+ String.format("\n º Libra esterlina %.2d",(valor*0.17)
-				+ String.format("\n º Iene %.2d",valor*27.67)));
+				String dolar= String.format("\n º Dólar %.2f",(valor*0.22));
+				String euro = String.format("\n º Euro %.2f",(valor*0.20));
+				String peso = String.format("\n º Peso argentino %.2f",(valor*24.66));
+				String libra = String.format("\n º Libra esterlina %.2f",(valor*0.17));
+				String iene = String.format("\n º Iene %.2f",(valor*27.67));
+				JOptionPane.showMessageDialog(null,valor+" reais, convertido resultam nos respectivos valores:"+dolar+euro+peso+libra+iene);
+		
+	}
+	public static void ex9() {
+		String zero="0",valor = JOptionPane.showInputDialog(null,"Digite o valor até 999: ");
+		
+		char centena = (char) zero.charAt(0), dezena= (char) zero.charAt(0), unidade= (char) zero.charAt(0);
+		
+		if(valor.length()==3) {
+			centena = (char) valor.charAt(0);
+			dezena = (char) valor.charAt(1);
+			unidade = (char) valor.charAt(2);
+			
+		}else if(valor.length()==2) {
+			dezena = (char) valor.charAt(0);
+			unidade = (char) valor.charAt(1);
+			
+		}else {
+			unidade = (char) valor.charAt(0);
+			
+			
+		}
+		JOptionPane.showMessageDialog(null,"Para o número: "+valor
+				+"\n Centena: "+centena+"00"
+				+"\n Dezena: "+dezena+"0"
+				+"\n Unidade: "+unidade);
 		
 		
+	}
+	public static void ex10() {
+	int anos = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite quantos anos você tem: "));
+	int meses = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite quantos meses: "));
+	int dias = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite quantos dias: "));
+		
+	
+	JOptionPane.showMessageDialog(null, "Você viveu "+((anos*365)+(meses*30)+dias)+" dias");
 	}
 	
 }
