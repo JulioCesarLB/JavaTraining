@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class Aula5 {
 	public static void main(String Args[]) { 
-		ex10();
+		desafio();
 		
 	}
 	public static void ex2() {  
@@ -121,12 +121,22 @@ public class Aula5 {
 		
 	}
 	public static void ex10() {
-	int anos = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite quantos anos você tem: "));
-	int meses = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite quantos meses: "));
-	int dias = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite quantos dias: "));
+		int anos = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite quantos anos você tem: "));
+		int meses = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite quantos meses: "));
+		int dias = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite quantos dias: "));
+			
 		
-	
-	JOptionPane.showMessageDialog(null, "Você viveu "+((anos*365)+(meses*30)+dias)+" dias");
+		JOptionPane.showMessageDialog(null, "Você viveu "+((anos*365)+(meses*30)+dias)+" dias");
 	}
-	
+	public static void desafio() {
+		int diasTotal = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite quantos dias você viveu: "));
+		 
+		int anos = (diasTotal-(diasTotal%365))/365;
+		int meses= ((diasTotal%365)-((diasTotal%365)%30))/30;
+		int dias=(diasTotal%365)%30;
+		
+		
+		JOptionPane.showMessageDialog(null, "Você tem "+anos+" anos "+meses+" meses e "+dias+" dias");
+		
+	}
 }
