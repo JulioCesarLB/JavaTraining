@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class Aula07 {
 	public static void main (String[] Args) {
-		JOptionPane.showMessageDialog(null,ex7());
+		JOptionPane.showMessageDialog(null,ex10());
 	}
 	public static int ex5() {
 		int maior =0;
@@ -56,5 +56,76 @@ public class Aula07 {
 		
 		}while(!correct);
 		return quantidade+" alunos tiraram mais que a média e "+(20-quantidade)+" tiraram menos ou igual a média";
+	}
+	public static int ex8() {
+		int num, soma=0;
+		do {
+			num =Integer.parseInt(JOptionPane.showInputDialog(null,"Digite um número positivo inteiro"));
+		}while(num<0);
+		
+		for(int i= 0; i<=num;i++) {
+			soma=soma+i;
+		}
+		
+		return soma;
+		
+	}
+	public static String ex9() {
+		int num =Integer.parseInt(JOptionPane.showInputDialog(null,"Digite um número"));
+		String divisores="";
+		
+		for(int i=1;i<=num;i++) {
+			if(num%i==0) {
+				divisores=divisores+i+", ";
+			}
+		}
+		
+		return divisores;
+		
+	}
+	public static Boolean verificaPrimo(int num) {
+		if((num==2) || (num==3) || (num==5) || (num==7)){
+			return true;
+		}
+		
+		
+		if((num%2==0) || (num%3==0) || (num%5==0) || (num%7==0)) {
+			return false;
+		}else {
+			for(int i =11;i<num;i+=2) {
+				if((i%2==0) || (i%3==0) || (i%5==0) || (i%7==0)) {
+					continue;
+				}else if(num%i==0) {
+					return false;
+				}
+				
+			}
+			
+			return true;
+		}
+	}
+	public static String ex10() {
+		int num = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite um número"));
+		String nums="";
+		
+		for(int i=2;i<=num;i++) {
+			
+			if(i%100==0) {
+				nums=nums+" \n";
+			}
+			
+			if(verificaPrimo(i)) {
+				nums=nums+i+", ";
+				
+			}
+			else {
+				
+			}
+			
+		}
+		return nums;
+		
+		
+	
 	}
 }
