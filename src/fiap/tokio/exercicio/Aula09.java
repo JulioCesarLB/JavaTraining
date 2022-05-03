@@ -8,7 +8,18 @@ public class Aula09 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	JOptionPane.showMessageDialog(null, ex4());
+	JOptionPane.showMessageDialog(null, ex1());
+	}
+	public static String ex1() {
+		String[] nomes= {"Alexandre","Arthur","Samuel","Lucas"};
+		String strFinal="";
+		
+		for(int i=0;i<nomes.length;i++) {
+			for(int j=i+1;j<nomes.length;j++) {
+				strFinal+="\n"+nomes[i]+" e "+nomes[j];
+			}
+		}
+		return strFinal;
 	}
 	
 	public static String ex3() {
