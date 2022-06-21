@@ -4,31 +4,21 @@ public class Conta {
 
 	private String nm_cliente, cpf_cliente;
 
-	private long nmr_conta_cliente; 
+	private long nmr_conta_cliente;
+	private Cliente cliente;
 	private double saldo_cliente;
 	
 	
 	
-	
-	public Conta(String nm_cliente, String cpf_cliente, long nmr_conta_cliente) {
-		this.nm_cliente = nm_cliente;
-		this.cpf_cliente = cpf_cliente;
+	public Conta(long nmr_conta_cliente, Cliente cliente) {
+		this.cliente = cliente;
 		this.nmr_conta_cliente = nmr_conta_cliente;
+		cliente.getNm_cliente();
+		
 	}
 	
 	//getters e setters
-	public String getNm_cliente() {
-		return nm_cliente;
-	}
-	public void setNm_cliente(String nm_cliente) {
-		this.nm_cliente = nm_cliente;
-	}
-	public String getCpf_cliente() {
-		return cpf_cliente;
-	}
-	public void setCpf_cliente(String cpf_cliente) {
-		this.cpf_cliente = cpf_cliente;
-	}
+	
 	public long getNmr_conta_cliente() {
 		return nmr_conta_cliente;
 	}
