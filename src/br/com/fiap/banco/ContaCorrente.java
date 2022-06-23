@@ -2,7 +2,6 @@ package br.com.fiap.banco;
 
 public class ContaCorrente extends Conta {
 	private long nmr_conta_cliente;
-	private Cliente cliente;
 	private double saldoInvestimento=0;
 	
 	public ContaCorrente(long nmr_conta_cliente, Cliente cliente) {

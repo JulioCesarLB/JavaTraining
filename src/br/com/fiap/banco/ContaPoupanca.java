@@ -15,7 +15,6 @@ public class ContaPoupanca extends Conta {
 		return this.saldo_cliente;
 	}
 	public void remover(double valor, Conta contapoupan) {
-		
 		transferir(valor,contapoupan);
 	}
 	

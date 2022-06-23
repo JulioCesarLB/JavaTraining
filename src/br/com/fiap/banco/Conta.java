@@ -19,12 +19,12 @@ public abstract class Conta {
 	public abstract double consultar();
 	
 	public void deposito(double valor) {
-		saldo_cliente= saldo_cliente + valor;
+		this.saldo_cliente= this.saldo_cliente + valor;
 
 	}
 	public boolean transferir(double valor, Conta conta) {
-		if(valor<=saldo_cliente && valor>0) {
-			saldo_cliente = saldo_cliente - valor;
+		if(valor<=this.saldo_cliente && valor>0) {
+			this.saldo_cliente = this.saldo_cliente - valor;
 			conta.deposito(valor);
 
 			return true;
@@ -34,8 +34,8 @@ public abstract class Conta {
 		}
 	}
 	public boolean sacar(double valor) {
-		if(saldo_cliente>=valor && valor>0) {
-			saldo_cliente=saldo_cliente-valor;
+		if(this.saldo_cliente>=valor && valor>0) {
+			this.saldo_cliente=this.saldo_cliente-valor;
 			return true;
 		}else {
 			System.out.println("Não é possível sacar esse valor");

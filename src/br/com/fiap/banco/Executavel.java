@@ -31,8 +31,29 @@ public class Executavel {
 			System.out.println("");
 			System.out.println("");
 			System.out.println("Saldo: conta corrente: "+contaLuizao.consultar());
-			System.out.println("Saldo: conta corrente: "+contaPoupancaLuizao.consultar());
-			System.out.println("Saldo: conta corrente: "+contaLuizao.consultarInvestimento());
+			System.out.println("Saldo: conta poupanca: "+contaPoupancaLuizao.consultar());
+			System.out.println("Saldo Investimento: conta corrente: "+contaLuizao.consultarInvestimento());
+			
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			
+			contaLuizao.resgate(contaLuizao.consultarInvestimento());
+			System.out.println("");
+			System.out.println("Saldo: conta corrente: "+contaLuizao.consultar());
+			System.out.println("Saldo: conta poupanca: "+contaPoupancaLuizao.consultar());
+			System.out.println("Saldo Investimento: conta corrente: "+contaLuizao.consultarInvestimento());
+			
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			
+			
+			contaPoupancaLuizao.remover(contaPoupancaLuizao.consultar(), contaLuizao);
+			System.out.println("Saldo: conta corrente: "+contaLuizao.consultar());
+			System.out.println("Saldo: conta poupanca: "+contaPoupancaLuizao.consultar());
+			System.out.println("Saldo Investimento: conta corrente: "+contaLuizao.consultarInvestimento());
+
 			
 
 			
