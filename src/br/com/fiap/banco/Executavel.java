@@ -6,8 +6,37 @@ public class Executavel {
 			Cliente luizao = new Cliente("luizao","46546841351325") ;
 			
 			ContaCorrente contaLuizao = new ContaCorrente(1,luizao);
+			ContaPoupanca contaPoupancaLuizao = new ContaPoupanca(1,luizao);
 			
-			System.out.println(contaLuizao.getSaldo());
+			contaLuizao.deposito(9000);
+			System.out.println(contaLuizao.consultar());
+			System.out.println(contaPoupancaLuizao.consultar());
+			contaLuizao.poupanca(1000, contaPoupancaLuizao);
+			System.out.println("--------------------------------");
+			System.out.println(contaLuizao.consultar());
+			System.out.println(contaPoupancaLuizao.consultar());
+			System.out.println("--------------------------------");
+
+			System.out.println(contaLuizao.consultar());
+			System.out.println(contaPoupancaLuizao.consultar());
+			System.out.println(contaLuizao.consultarInvestimento());
+			System.out.println("--------------------------------");
+			
+			contaLuizao.investir(1000, "CDB");
+			System.out.println("--------------------------------");
+			contaLuizao.investir(1000, "LCI");
+			System.out.println("--------------------------------");
+			contaLuizao.investir(1000, "LCA");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("Saldo: conta corrente: "+contaLuizao.consultar());
+			System.out.println("Saldo: conta corrente: "+contaPoupancaLuizao.consultar());
+			System.out.println("Saldo: conta corrente: "+contaLuizao.consultarInvestimento());
+			
+
+			
+			
 		}
 		
 		

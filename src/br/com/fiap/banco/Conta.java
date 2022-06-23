@@ -14,22 +14,19 @@ public abstract class Conta {
 		
 	}
 		
-	public double getSaldo() {
-		return this.saldo_cliente;
-	}
 	
 	// Metodos de ação do cliente
-	public abstract void consultar();
+	public abstract double consultar();
 	
 	public void deposito(double valor) {
-		this.saldo_cliente= this.saldo_cliente + valor;
-		System.out.println("Deposito executado");
+		saldo_cliente= saldo_cliente + valor;
+
 	}
 	public boolean transferir(double valor, Conta conta) {
-		if(valor<=this.getSaldo() && valor>0) {
-			this.saldo_cliente = this.saldo_cliente - valor;
+		if(valor<=saldo_cliente && valor>0) {
+			saldo_cliente = saldo_cliente - valor;
 			conta.deposito(valor);
-			System.out.println("Transferecia exectada com sucesso");
+
 			return true;
 		}else {
 			System.out.println("Não é possível sacar esse valor");
@@ -37,9 +34,8 @@ public abstract class Conta {
 		}
 	}
 	public boolean sacar(double valor) {
-		if(getSaldo()>=valor && valor>0) {
-			this.saldo_cliente=this.saldo_cliente-valor;
-			System.out.println("saque executado");
+		if(saldo_cliente>=valor && valor>0) {
+			saldo_cliente=saldo_cliente-valor;
 			return true;
 		}else {
 			System.out.println("Não é possível sacar esse valor");
