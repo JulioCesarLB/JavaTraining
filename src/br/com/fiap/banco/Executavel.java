@@ -22,11 +22,15 @@ public class Executavel {
 			System.out.println(contaLuizao.consultarInvestimento());
 			System.out.println("--------------------------------");
 			
-			contaLuizao.investir(1000, "CDB");
+			CDB cdb = new CDB();
+			LCI lci = new LCI();
+			LCA lca = new LCA();
+			
+			contaLuizao.investir(1000, cdb);
 			System.out.println("--------------------------------");
-			contaLuizao.investir(1000, "LCI");
+			contaLuizao.investir(1000, lci);
 			System.out.println("--------------------------------");
-			contaLuizao.investir(1000, "LCA");
+			contaLuizao.investir(1000, lca);
 			System.out.println("");
 			System.out.println("");
 			System.out.println("");

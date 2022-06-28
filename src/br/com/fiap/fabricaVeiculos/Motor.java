@@ -1,32 +1,46 @@
 package br.com.fiap.fabricaVeiculos;
 
 public class Motor {
-	private int qntCilindros,qntVelas;
-	private double potencia;
-	private String tipo, marca;
-	
-	public Motor(double potencia, int qntCilindros, int qntVelas, String tipo, String marca) {
+	private String potencia, cavalo, grauProtecao, carcacaMotor, qtdPistao;
+
+	public Motor(String potencia, String cavalo, String grauProtecao, String carcacaMotor) {
 		super();
 		this.potencia = potencia;
-		this.qntCilindros = qntCilindros;
-		this.qntVelas = qntVelas;
-		this.tipo = tipo;
-		this.marca = marca;
+		this.cavalo = cavalo;
+		this.grauProtecao = grauProtecao;
+		this.carcacaMotor = carcacaMotor;
 	}
-	
-	public double getPotencia() {
+
+	public String getPotencia() {
 		return potencia;
 	}
-	public int getQntCilindros() {
-		return qntCilindros;
+
+	public void setPotencia(String potencia) {
+		this.potencia = potencia;
 	}
-	public int getQntVelas() {
-		return qntVelas;
+
+	public String getCavalo() {
+		return cavalo;
 	}
-	public String getTipo() {
-		return tipo;
+
+	public void setCavalo(String cavalo) {
+		this.cavalo = cavalo;
 	}
-	public String getMarca() {
-		return marca;
+
+	public String getGrauProtecao() {
+		return grauProtecao;
 	}
+
+	public void setGrauProtecao(String grauProtecao) {
+		this.grauProtecao = grauProtecao;
+	}
+
+	public String getCarcacaMotor() {
+		return carcacaMotor;
+	}
+
+	public void setCarcacaMotor(String carcacaMotor) {
+		this.carcacaMotor = carcacaMotor;
+	}
+	
 }

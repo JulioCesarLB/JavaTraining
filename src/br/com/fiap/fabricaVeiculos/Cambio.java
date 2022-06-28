@@ -1,27 +1,46 @@
 package br.com.fiap.fabricaVeiculos;
 
 public class Cambio {
-	private String marca, tipo;
+	private String tipo, marca, qtdMarcha, tamanho;
 
-	public Cambio(String marca, int qntMarcha, String tipo) {
-		super();
-		this.marca = marca;
-		this.qntMarcha = qntMarcha;
+	public Cambio(String tipo, String marca, String qtdMarcha, String tamanho) {
 		this.tipo = tipo;
-	}
-	
-	public String getMarca() {
-		return marca;
+		this.marca = marca;
+		this.qtdMarcha = qtdMarcha;
+		this.tamanho = tamanho;
 	}
 	
 	public String getTipo() {
 		return tipo;
 	}
-	
-	public int getQntMarcha() {
-		return qntMarcha;
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public String getQtdMarcha() {
+		return qtdMarcha;
+	}
+
+	public void setQtdMarcha(String qtdMarcha) {
+		this.qtdMarcha = qtdMarcha;
+	}
+
+	public String getTamanho() {
+		return tamanho;
+	}
+
+	public void setTamanho(String tamanho) {
+		this.tamanho = tamanho;
 	}
 	
-	private int qntMarcha;
-
+	
 }

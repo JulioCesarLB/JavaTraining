@@ -15,40 +15,16 @@ public class ContaCorrente extends Conta {
 		// TODO Auto-generated method stub
 		return this.saldo_cliente;
 	}
-	public void investir(double valor, String tipoInves) {
+	public void investir(double valor, Produto produto) {
 		
-		if(tipoInves.equals("CDB")) {
 			System.out.println("Saldo CONTACORRENTE: "+consultar());
 			if(sacar(valor)) {
-				saldoInvestimento+= valor*(1+0.008);
-				System.out.println("Investimento em CDB realizado, valor atual INVESTIMENTO: "+this.saldoInvestimento);
-				System.out.println("Valor atual CONTACORRENTE: "+consultar());
-			}else {
-				System.out.println("Valor inválido");
-			}
-		
-		}else if(tipoInves.equals("LCA")) {
-			System.out.println("Saldo CONTACORRENTE: "+consultar());
-			if(sacar(valor)) {
-				this.saldoInvestimento+= valor*(1+0.07);
-				System.out.println("Investimento em LCA realizado, valor atual INVESTIMENTO: "+this.saldoInvestimento);
-				System.out.println("Valor atual CONTACORRENTE: "+consultar());
-
-			}else {
-				System.out.println("Valor inválido");
-			}
-		}else if(tipoInves.equals("LCI")) {
-			System.out.println("Saldo CONTACORRENTE: "+consultar());
-			if(sacar(valor)) {
-				this.saldoInvestimento+= valor*(1+0.07);
-				System.out.println("Investimento em LCI realizado, valor atual INVESTIMENTO: "+this.saldoInvestimento);
-				System.out.println("Valor atual CONTACORRENTE: "+consultar());
-
-			}else {
-				System.out.println("Valor inválido");
-			}
+				saldoInvestimento+= produto.investir(valor);
 				
-		}
+			}else {
+				System.out.println("Valor inválido");
+			}
+	
 	}
 	public void poupanca(double valor, Conta contapoupan) {
 		transferir(valor,contapoupan);
