@@ -10,6 +10,9 @@ public class Executavel {
 		Usuario daivinho = new Usuario("litle david","nha",4);
 		Usuario arthur = new Usuario("arthur","nha",5);
 		
+		Map mapa = new HashMap();
+		
+		
 		List<Usuario> lista = new ArrayList<Usuario>();
 		
 		lista.add(luiz);
@@ -20,9 +23,26 @@ public class Executavel {
 		
 		Collections.sort(lista);
 		
-		for(Usuario nome:lista) {
-			
-			System.out.println("Nome: "+nome.getNome()+"  Senha: "+nome.getSenha());
+		for(Usuario usuario:lista) {
+			mapa.put(usuario.getNome(), usuario);
 		}
+		
+		getObjeto(mapa,"bruno");
+	}
+	public static void getObjeto(Map mapa, String chave) {
+		
+		for(: mapa.containsKey(null)){
+			
+			
+		}
+		Object objeto = mapa.get(chave);
+		Usuario user = (Usuario) objeto;
+		List<Usuario> lista2 = new ArrayList<Usuario>();
+		lista2.add(user);
+		
+		for(Usuario uuser :lista2) {
+			System.out.println(uuser.getIdUser());
+		}
+		
 	}
 }
