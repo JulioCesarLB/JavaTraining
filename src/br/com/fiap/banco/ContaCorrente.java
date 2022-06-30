@@ -15,18 +15,16 @@ public class ContaCorrente extends Conta {
 		// TODO Auto-generated method stub
 		return this.saldo_cliente;
 	}
-	public void investir(double valor, Produto produto) {
+	public void investir(double valor, Produto produto) throws SaldoInsuficiente, ValorInvalido {
 		
 			System.out.println("Saldo CONTACORRENTE: "+consultar());
 			if(sacar(valor)) {
 				saldoInvestimento+= produto.investir(valor);
 				
-			}else {
-				System.out.println("Valor inválido");
 			}
 	
 	}
-	public void poupanca(double valor, Conta contapoupan) {
+	public void poupanca(double valor, Conta contapoupan) throws SaldoInsuficiente, ValorInvalido {
 		transferir(valor,contapoupan);
 
 	}

@@ -11,7 +11,15 @@ public class Executavel {
 			contaLuizao.deposito(9000);
 			System.out.println(contaLuizao.consultar());
 			System.out.println(contaPoupancaLuizao.consultar());
-			contaLuizao.poupanca(1000, contaPoupancaLuizao);
+			try {
+				contaLuizao.poupanca(1000, contaPoupancaLuizao);
+			} catch (SaldoInsuficiente e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ValorInvalido e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			System.out.println("--------------------------------");
 			System.out.println(contaLuizao.consultar());
 			System.out.println(contaPoupancaLuizao.consultar());
@@ -26,11 +34,35 @@ public class Executavel {
 			LCI lci = new LCI();
 			LCA lca = new LCA();
 			
-			contaLuizao.investir(1000, cdb);
+			try {
+				contaLuizao.investir(-9, cdb);
+			} catch (SaldoInsuficiente e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ValorInvalido e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			System.out.println("--------------------------------");
-			contaLuizao.investir(1000, lci);
+			try {
+				contaLuizao.investir(1000, lci);
+			} catch (SaldoInsuficiente e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ValorInvalido e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			System.out.println("--------------------------------");
-			contaLuizao.investir(1000, lca);
+			try {
+				contaLuizao.investir(1000, lca);
+			} catch (SaldoInsuficiente e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ValorInvalido e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			System.out.println("");
 			System.out.println("");
 			System.out.println("");
@@ -53,12 +85,21 @@ public class Executavel {
 			System.out.println("");
 			
 			
-			contaPoupancaLuizao.remover(contaPoupancaLuizao.consultar(), contaLuizao);
+			try {
+				contaPoupancaLuizao.remover(contaPoupancaLuizao.consultar(), contaLuizao);
+			} catch (SaldoInsuficiente e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ValorInvalido e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			System.out.println("Saldo: conta corrente: "+contaLuizao.consultar());
 			System.out.println("Saldo: conta poupanca: "+contaPoupancaLuizao.consultar());
 			System.out.println("Saldo Investimento: conta corrente: "+contaLuizao.consultarInvestimento());
 
 			
+			System.out.println(Conta.exibiContador());
 
 			
 			

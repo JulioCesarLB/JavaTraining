@@ -14,7 +14,7 @@ public class ContaPoupanca extends Conta {
 		// TODO Auto-generated method stub
 		return this.saldo_cliente;
 	}
-	public void remover(double valor, Conta contapoupan) {
+	public void remover(double valor, Conta contapoupan) throws SaldoInsuficiente, ValorInvalido {
 		transferir(valor,contapoupan);
 	}
 	
