@@ -27,22 +27,18 @@ public class Executavel {
 			mapa.put(usuario.getNome(), usuario);
 		}
 		
-		getObjeto(mapa,"bruno");
+		getObjeto(mapa);
 	}
-	public static void getObjeto(Map mapa, String chave) {
+	public static void getObjeto(Map mapa) {
 		
-		for(: mapa.containsKey(null)){
+		for(Object objeto : mapa.keySet()){
 			
+			Object object = mapa.get(objeto);
+			Usuario user = (Usuario) object;
+			System.out.println("Nome: "+user.getNome()+" | Senha: "+user.getSenha()+" | ID: "+user.getIdUser());
 			
 		}
-		Object objeto = mapa.get(chave);
-		Usuario user = (Usuario) objeto;
-		List<Usuario> lista2 = new ArrayList<Usuario>();
-		lista2.add(user);
 		
-		for(Usuario uuser :lista2) {
-			System.out.println(uuser.getIdUser());
-		}
 		
 	}
 }
